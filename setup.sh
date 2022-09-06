@@ -42,8 +42,7 @@ install() {
   tar xf $APM_TMP_DIR/OpenJDK8U-jre_x64_linux_hotspot_8u345b01.tar.gz -C $APM_PKG_INSTALL_DIR/
 
   echo "#!/usr/bin/env sh" > $APM_PKG_BIN_DIR/apk-mitm
-  echo -n "PATH=$APM_PKG_INSTALL_DIR/bin/:$APM_PKG_INSTALL_DIR/jdk8u345-b01-jre/bin:\$PATH $APM_PKG_INSTALL_DIR/bin/apk-mitm " >> $APM_PKG_BIN_DIR/apk-mitm
-  echo '"$@"' >> $APM_PKG_BIN_DIR/apk-mitm
+  echo "PATH=$APM_PKG_INSTALL_DIR/bin/:$APM_PKG_INSTALL_DIR/jdk8u345-b01-jre/bin:\$PATH $APM_PKG_INSTALL_DIR/bin/apk-mitm \"\$@\"" >> $APM_PKG_BIN_DIR/apk-mitm
   chmod +x $APM_PKG_BIN_DIR/apk-mitm
 
   echo "This package adds the command: apk-mitm"
