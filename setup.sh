@@ -45,7 +45,6 @@ install() {
   echo "PATH=$APM_PKG_INSTALL_DIR/bin/:$APM_PKG_INSTALL_DIR/jdk8u345-b01-jre/bin:\$PATH $APM_PKG_INSTALL_DIR/bin/apk-mitm " >> $APM_PKG_BIN_DIR/apk-mitm
   echo '"$@"' >> $APM_PKG_BIN_DIR/apk-mitm
 
-  ln -s $APM_PKG_INSTALL_DIR/bin/apk-mitm $APM_PKG_BIN_DIR/
   echo "This package adds the command: apk-mitm"
 }
 
